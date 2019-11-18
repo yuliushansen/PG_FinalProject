@@ -29,14 +29,20 @@ public class ChallengeController : MonoBehaviour
         }
         //Generate Challenge
         if(counter <= 0.0f){
-            GenerateRandomChallenge();
+            
+            if (targetTime <= 0.0f)
+            {
+                GeneratePortal();
+            }
+            else
+            {
+                GenerateRandomChallenge();
+            }
         }
         else
         {
             counter -= Time.deltaTime * frequency;
-            if (targetTime == 0.0f){
-                GeneratePortal();
-            }
+            
             // if(counterSpeed == 5.0f){
             //     scrollSpeed +=0.01f;
             // }
@@ -68,10 +74,10 @@ public class ChallengeController : MonoBehaviour
         newChallenge.transform.parent = transform;
         counter = 1.0f;
         targetTime--;
-        Debug.Log(targetTime);
+        Debug.Log(""+targetTime);
     }
     void GeneratePortal () {
-        GameObject newportal = Instantiate(portal[Random.Range(0,portal.Length)], challengesSpawnPoint.position, Quaternion.identity) as GameObject;
+        GameObject newportal = Instantiate(portal[Random.Range(0,portal.Length)], challengesSpawnPoint.position, Quaternion.identity);
         newportal.transform.parent = transform;
     }
 
