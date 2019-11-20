@@ -13,6 +13,7 @@ public class ChallengeController : MonoBehaviour
     bool isGameOver = false;
     // float counterSpeed = 0.0f;
     public int targetTime = 2;
+    bool isPortalCreated = false;
     
     // Start is called before the first frame update
     void Start()
@@ -32,7 +33,10 @@ public class ChallengeController : MonoBehaviour
             
             if (targetTime <= 0.0f)
             {
-                GeneratePortal();
+                if (!isPortalCreated)
+                {
+                    GeneratePortal();
+                }
             }
             else
             {
@@ -74,11 +78,12 @@ public class ChallengeController : MonoBehaviour
         newChallenge.transform.parent = transform;
         counter = 1.0f;
         targetTime--;
-        Debug.Log(""+targetTime);
+        isPortalCreated = false;
     }
     void GeneratePortal () {
         GameObject newportal = Instantiate(portal[Random.Range(0,portal.Length)], challengesSpawnPoint.position, Quaternion.identity);
         newportal.transform.parent = transform;
+        isPortalCreated = true;
     }
 
 }

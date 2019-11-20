@@ -1245,10 +1245,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrollSpeed: 5
   challenges:
-  - {fileID: 6480627367216659622, guid: 7ef3d5b556c2ca440abebbddb898daa8, type: 3}
-  - {fileID: 2862524644671294828, guid: 8de39d28a1d817e4997ba826efb9864e, type: 3}
+  - {fileID: 4917769416319270406, guid: 1350438b07d2b1c4e873afedd0271204, type: 3}
   portal:
-  - {fileID: 7144058838838311014, guid: 142e88dbe4cbe24449eabd8913a74e0f, type: 3}
+  - {fileID: 6789732465866358171, guid: f7075bc0cba36744d96874611fed4580, type: 3}
   frequency: 0.25
   challengesSpawnPoint: {fileID: 1945635921}
   targetTime: 1
@@ -1427,14 +1426,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.7, y: 0.7}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.7, y: 0.7}
   m_EdgeRadius: 0
 --- !u!212 &2042710980
 SpriteRenderer:
@@ -1473,7 +1472,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fb5fd5722a22c7344868dc53d1e78457, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 17f1a26ba883faf419d170d2a89ede29, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1492,8 +1491,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2042710978}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.88, z: 0}
-  m_LocalScale: {x: 22.984146, y: 0.386, z: 1}
+  m_LocalPosition: {x: 0, y: -3.859, z: 0}
+  m_LocalScale: {x: 22.984146, y: 3.3389356, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
