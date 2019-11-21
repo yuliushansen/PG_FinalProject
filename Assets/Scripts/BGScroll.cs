@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BGScroll : MonoBehaviour
 {
-    public float scroll_Speed = 0.1f;
+    public float scroll_Speed = 0.5f;
     private MeshRenderer mesh_Renderer;
 
     private Vector2 saved_Offset;
@@ -24,7 +24,7 @@ public class BGScroll : MonoBehaviour
         mesh_Renderer.sharedMaterial.SetTextureOffset("_MainTex", offset);
     }
 
-    void OnDisablae(){
+    public void OnDisablae(){
         mesh_Renderer.sharedMaterial.SetTextureOffset("_MainTex", saved_Offset);
     }
 }

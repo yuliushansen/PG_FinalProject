@@ -23,18 +23,10 @@ public class PlayerScripts : MonoBehaviour
         myGameController = GameObject.FindObjectOfType<GameController>();
     }
 
-    void FixedUpdate()
-    {
-        if(Input.GetKeyDown(KeyCode.Space) && isGround && !isGameOver){
-            myRigidbody.AddForce(Vector3.up * (jumpPower * myRigidbody.mass* myRigidbody.gravityScale * 20.0f));
-            animator.SetBool("isRun",false);
-            animator.SetBool("isJump",true);
-        }
-        //Hit 
-        if (transform.position.x < posX) {
-            GameOver();
-        }
-    }
+    //void FixedUpdate()
+    //{
+        
+    //}
     void GameOver() {
         isGameOver = true;
         myChallenge.GameOver();
@@ -42,6 +34,17 @@ public class PlayerScripts : MonoBehaviour
     }
 
     void Update () {
+        if (Input.GetKeyDown(KeyCode.Space) && isGround && !isGameOver)
+        {
+            myRigidbody.AddForce(Vector3.up * (jumpPower * myRigidbody.mass * myRigidbody.gravityScale * 20.0f));
+            animator.SetBool("isRun", false);
+            animator.SetBool("isJump", true);
+        }
+        //Hit 
+        if (transform.position.x < posX)
+        {
+            GameOver();
+        }
     }
 
     void OnCollisionEnter2D (Collision2D other) {
