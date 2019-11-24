@@ -34,7 +34,8 @@ public class PlayerScripts : MonoBehaviour
     }
 
     void Update () {
-        if (Input.GetKeyDown(KeyCode.Space) && isGround && !isGameOver)
+        //if (Input.GetKeyDown(KeyCode.Space) && isGround && !isGameOver)
+        if(Input.touchCount>0 && isGround && !isGameOver)
         {
             myRigidbody.AddForce(Vector3.up * (jumpPower * myRigidbody.mass * myRigidbody.gravityScale * 20.0f));
             animator.SetBool("isRun", false);

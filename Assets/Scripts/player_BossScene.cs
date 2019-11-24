@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class player_BossScene
  : MonoBehaviour
 {
+    public Joystick joystick;
     public int health = 100;
     public Slider HealthBar;
 
@@ -40,6 +41,7 @@ public class player_BossScene
     //variabel ini kita panggil
     //untuk menjalankan animasi idle, run, dan jump
     private Animator anim;
+    float verticalMove;
 
     private void Start()
     {
@@ -95,7 +97,7 @@ public class player_BossScene
 
         //Fungsi untuk Player saat melompat
         CharacterJump();
-        Attack();
+        //Attack();
         
         //if (isEnemy)
         //{
@@ -121,7 +123,7 @@ public class player_BossScene
         //yang telah di sediakan oleh Unity
         //Untuk melihat keyboard inputannya sobat
         //buka di menu edit terus pilih Project Setting dan pilih Input
-        moveInput = Input.GetAxis("Horizontal");
+        moveInput = joystick.Horizontal;
 
         if (moveInput > 0 && facingRight == false)
         {
@@ -140,8 +142,9 @@ public class player_BossScene
 
     void CharacterJump()
     {
-
-        if (isGrounded == true && Input.GetKeyDown(KeyCode.Space))
+        verticalMove = joystick.Vertical;
+        //if (isGrounded == true && Input.GetKeyDown(KeyCode.Space))
+        if (isGrounded == true && verticalMove >= .5f)
         {
             //Cara memanggil animasi dengan
             //parameter yang bertipe Trigger
@@ -155,16 +158,16 @@ public class player_BossScene
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
     }
 
-    void Attack()
+    public void Attack()
     {
 
-        if (Input.GetKeyDown(KeyCode.B))
-        {
+        //if (Input.GetKeyDown(KeyCode.B))
+        //{
             //Cara memanggil animasi dengan
             //parameter yang bertipe Trigger
             anim.SetTrigger("isAttack");
             Shoot();
-        }
+        //}
     }
 
     void CharacterAnimation()
