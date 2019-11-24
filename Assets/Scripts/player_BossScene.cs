@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class player_BossScene
  : MonoBehaviour
@@ -80,6 +81,10 @@ public class player_BossScene
             //isEnemy = true;
             TakeDamage(5);
             anim.SetBool("isHurt", true);
+        }
+        else if (other.collider.tag == "Portal")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
         else
         {
