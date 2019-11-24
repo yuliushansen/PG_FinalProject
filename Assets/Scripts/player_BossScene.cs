@@ -73,6 +73,8 @@ public class player_BossScene
         //Destroy(gameObject);
         anim.SetBool("isDie", true);
         anim.SetBool("isHurt", false);
+        //sound
+        SoundMScript.PlaySound("death");
     }
     void OnCollisionEnter2D(Collision2D other)
     {
@@ -81,6 +83,7 @@ public class player_BossScene
             //isEnemy = true;
             TakeDamage(5);
             anim.SetBool("isHurt", true);
+            
         }
         else if (other.collider.tag == "Portal")
         {
@@ -154,6 +157,8 @@ public class player_BossScene
             //Cara memanggil animasi dengan
             //parameter yang bertipe Trigger
             anim.SetTrigger("isJump");
+            //sound jump
+            SoundMScript.PlaySound("jump");
             rigidBody.velocity = new Vector2(rigidBody.velocity.x, jumpForce);
         }
     }
@@ -171,6 +176,8 @@ public class player_BossScene
             //Cara memanggil animasi dengan
             //parameter yang bertipe Trigger
             anim.SetTrigger("isAttack");
+            //suara tembakan
+            SoundMScript.PlaySound("fire");
             Shoot();
         //}
     }
