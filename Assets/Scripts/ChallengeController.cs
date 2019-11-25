@@ -12,7 +12,7 @@ public class ChallengeController : MonoBehaviour
     public Transform challengesSpawnPoint;
     bool isGameOver = false;
     // float counterSpeed = 0.0f;
-    public int targetTime = 2;
+    public int targetTime = 600;
     bool isPortalCreated = false;
     
     // Start is called before the first frame update

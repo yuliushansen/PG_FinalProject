@@ -30,6 +30,7 @@ public class PlayerScripts : MonoBehaviour
     void GameOver() {
         isGameOver = true;
         myChallenge.GameOver();
+        SoundMScript.PlaySound("death");
         animator.SetBool("isDeath",true);
     }
 
@@ -38,6 +39,7 @@ public class PlayerScripts : MonoBehaviour
         if(Input.touchCount>0 && isGround && !isGameOver)
         {
             myRigidbody.AddForce(Vector3.up * (jumpPower * myRigidbody.mass * myRigidbody.gravityScale * 20.0f));
+            SoundMScript.PlaySound("jump");
             animator.SetBool("isRun", false);
             animator.SetBool("isJump", true);
         }
